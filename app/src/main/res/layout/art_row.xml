@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imgArt"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_background" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvArtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center|start"
+            android:singleLine="true"
+            android:text="Fatih'in İstanbulun Fethedişi"
+            android:textColor="#363636"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvArtistName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_weight="0"
+            android:fontFamily="cursive"
+            android:text="Mehmet Emin Yıldız Han"
+            android:textColor="#C96E6E"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvArtYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_weight="0"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="1453"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>
