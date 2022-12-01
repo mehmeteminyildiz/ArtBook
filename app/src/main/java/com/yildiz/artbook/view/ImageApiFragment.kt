@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.yildiz.artbook.databinding.FragmentImageApiBinding
+import timber.log.Timber
 
 class ImageApiFragment : Fragment() {
     private var _binding: FragmentImageApiBinding? = null
@@ -27,5 +28,11 @@ class ImageApiFragment : Fragment() {
 
     private fun initialize() {
 
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+        Timber.e("onDestroy FragmentImageApi")
     }
 }

@@ -52,5 +52,4 @@ class ArtFragment : Fragment() {
         _binding = null
         Timber.e("onDestroy ArtFragment")
     }
-
 }
