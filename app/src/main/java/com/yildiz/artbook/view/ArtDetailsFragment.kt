@@ -7,10 +7,15 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.RequestManager
 import com.yildiz.artbook.databinding.FragmentArtDetailsBinding
 import timber.log.Timber
+import javax.inject.Inject
 
-class ArtDetailsFragment : Fragment() {
+class ArtDetailsFragment
+@Inject constructor(
+    val glide: RequestManager
+) : Fragment() {
     private var _binding: FragmentArtDetailsBinding? = null
     private val binding: FragmentArtDetailsBinding get() = _binding!!
 
