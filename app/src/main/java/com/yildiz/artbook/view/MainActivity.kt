@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.yildiz.artbook.R
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -16,5 +17,6 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.fragmentFactory = fragmentFactory
         // fragmentFactory'nin kullanılacağını belirtiyoruz
         setContentView(R.layout.activity_main)
+        Timber.plant(Timber.DebugTree())
     }
 }

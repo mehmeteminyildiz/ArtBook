@@ -70,7 +70,7 @@ class ArtViewModel
         insertArt(art)
         setSelectedImage("")
         insertArtMsg.postValue(Resource.success(art))
-        
+
     }
 
     fun searchForImage(searchString: String) {

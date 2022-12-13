@@ -29,7 +29,7 @@ class ImageRecyclerAdapter
 
     private val recyclerListDiffer = AsyncListDiffer(this, diffUtil)
 
-    var images: List<String>
+    var images: List<String?>?
         get() = recyclerListDiffer.currentList
         set(value) = recyclerListDiffer.submitList(value)
 
@@ -49,12 +49,14 @@ class ImageRecyclerAdapter
         position: Int
     ) {
         holder.binding.apply {
-            val url = images[position]
+            val url = images?.get(position)
             glide.load(url).into(imgArt)
 
             imgArt.setOnClickListener {
-                onItemClickListener?.let {
-                    it(url)
+                onItemClickListener?.let { listener ->
+                    url?.let {
+                        listener(url)
+                    }
                 }
             }
         }
@@ -66,7 +68,7 @@ class ImageRecyclerAdapter
         onItemClickListener = listener
     }
 
-    override fun getItemCount(): Int = images.size
+    override fun getItemCount(): Int = images?.size ?: 0
 
 
 }

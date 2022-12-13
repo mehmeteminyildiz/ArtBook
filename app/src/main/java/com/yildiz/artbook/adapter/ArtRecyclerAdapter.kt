@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
 import com.yildiz.artbook.databinding.ArtRowBinding
 import com.yildiz.artbook.roomdb.Art
+import timber.log.Timber
 import javax.inject.Inject
 
 /**
@@ -50,6 +51,7 @@ class ArtRecyclerAdapter @Inject constructor(
     private fun bindArtViewHolder(holder: ArtViewHolder, position: Int) {
         val item = arts[position]
         holder.binding.apply {
+            Timber.e("my url: ${item.imageUrl}")
             glide.load(item.imageUrl).into(imgArt)
             tvArtName.text = item.name
             tvArtistName.text = item.artistName
