@@ -27,6 +27,8 @@ class ArtViewModel
     val artList = repository.getArt()
 
     // Image API Fragment
+
+
     private val images = MutableLiveData<Resource<ImageResponse>>()
     val imageList: LiveData<Resource<ImageResponse>> get() = images
 
